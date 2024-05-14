@@ -1,0 +1,146 @@
+---@type LazySpec
+return {
+  {
+    "folke/zen-mode.nvim",
+    name = "zen-mode",
+    lazy = false,
+  },
+  {
+    "nvim-treesitter/playground",
+    name = "tsplayground",
+    lazy = false,
+  },
+  {
+    "lambdalisue/suda.vim",
+    name = "suda",
+    lazy = false,
+  },
+  {
+    "wuelnerdotexe/vim-astro",
+    name = "vim-astro",
+    lazy = false,
+  },
+  {
+    "chrisbra/NrrwRgn",
+    name = "NarrowRegion",
+    lazy = false,
+  },
+  --[[ {
+    "tpope/vim-dadbod",
+    name = "dadbod",
+    lazy = false,
+  },
+  {
+    "kristijanhusak/vim-dadbod-ui",
+    name = "dadbod-ui",
+    lazy = false,
+  }, ]]
+
+  --[[ {
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
+      local cmp = require "cmp"
+      opts.mapping = require('cmp_config').mapping
+      opts.sources = cmp.config.sources {
+        { name = "nvim_lsp", priority = 1000 },
+        -- { name = "vim-dadbod-completion", priority = 750 },
+        { name = "luasnip", priority = 750 },
+        { name = "buffer", priority = 500 },
+        { name = "path", priority = 250 },
+      }
+
+      return opts
+    end,
+  }, ]]
+  -- neo-tree needs to be installed manually and configured from 0 to be customized
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = function()
+      local global_commands = {
+        system_open = function(state) require("astrocore").system_open(state.tree:get_node():get_id()) end,
+        parent_or_close = function(state)
+          local node = state.tree:get_node()
+          if (node.type == "directory" or node:has_children()) and node:is_expanded() then
+            state.commands.toggle_node(state)
+          else
+            require("neo-tree.ui.renderer").focus_node(state, node:get_parent_id())
+          end
+        end,
+        child_or_open = function(state)
+          local node = state.tree:get_node()
+          if node.type == "directory" or node:has_children() then
+            if not node:is_expanded() then -- if unexpanded, expand
+              state.commands.toggle_node(state)
+            else -- if expanded and has children, seleect the next child
+              require("neo-tree.ui.renderer").focus_node(state, node:get_child_ids()[1])
+            end
+          else -- if not a directory just open it
+            state.commands.open(state)
+          end
+        end,
+      }
+      local get_icon = require("astroui").get_icon
+      return {
+        close_if_last_window = true,
+        source_selector = {
+          winbar = true,
+          content_layout = "center",
+          sources = {
+            { source = "filesystem", display_name = get_icon "FolderClosed" .. " File" },
+            { source = "buffers", display_name = get_icon "DefaultFile" .. " Bufs" },
+            { source = "git_status", display_name = get_icon "Git" .. " Git" },
+            { source = "diagnostics", display_name = get_icon "Diagnostic" .. " Diagnostic" },
+          },
+        },
+        default_component_configs = {
+          indent = { padding = 0 },
+          icon = {
+            folder_closed = get_icon "FolderClosed",
+            folder_open = get_icon "FolderOpen",
+            folder_empty = get_icon "FolderEmpty",
+            default = get_icon "DefaultFile",
+          },
+          modified = { symbol = get_icon "FileModified" },
+          git_status = {
+            symbols = {
+              added = get_icon "GitAdd",
+              deleted = get_icon "GitDelete",
+              modified = get_icon "GitChange",
+              renamed = get_icon "GitRenamed",
+              untracked = get_icon "GitUntracked",
+              ignored = get_icon "GitIgnored",
+              unstaged = get_icon "GitUnstaged",
+              staged = get_icon "GitStaged",
+              conflict = get_icon "GitConflict",
+            },
+          },
+        },
+        window = {
+          width = 20, -- NOTE: THIS IS THE ONLY THING THAT MATTERS HERE
+          mappings = {
+            ["<space>"] = false, -- disable space until we figure out which-key disabling
+            ["[b"] = "prev_source",
+            ["]b"] = "next_source",
+            o = "open",
+            O = "system_open",
+            h = "parent_or_close",
+            l = "child_or_open",
+          },
+        },
+        filesystem = {
+          follow_current_file = {
+            enabled = true,
+          },
+          hijack_netrw_behavior = "open_current",
+          use_libuv_file_watcher = true,
+          commands = global_commands,
+        },
+        buffers = { commands = global_commands },
+        git_status = { commands = global_commands },
+        event_handlers = {
+          { event = "neo_tree_buffer_enter", handler = function(_) vim.opt_local.signcolumn = "auto" end },
+        },
+      }
+    end,
+  },
+}
