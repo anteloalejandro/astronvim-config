@@ -25,33 +25,19 @@ return {
     name = "NarrowRegion",
     lazy = false,
   },
-  --[[ {
-    "tpope/vim-dadbod",
-    name = "dadbod",
-    lazy = false,
-  },
   {
-    "kristijanhusak/vim-dadbod-ui",
-    name = "dadbod-ui",
-    lazy = false,
-  }, ]]
-
-  --[[ {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
       local cmp = require "cmp"
-      opts.mapping = require('cmp_config').mapping
       opts.sources = cmp.config.sources {
         { name = "nvim_lsp", priority = 1000 },
-        -- { name = "vim-dadbod-completion", priority = 750 },
+        { name = "quickgd", priority = 750 }, -- NOTE: quickgd support
         { name = "luasnip", priority = 750 },
         { name = "buffer", priority = 500 },
         { name = "path", priority = 250 },
       }
-
-      return opts
     end,
-  }, ]]
+  },
   -- neo-tree needs to be installed manually and configured from 0 to be customized
   {
     "nvim-neo-tree/neo-tree.nvim",

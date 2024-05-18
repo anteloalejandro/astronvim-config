@@ -1,10 +1,3 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
--- Configuration documentation can be found with `:h astrolsp`
--- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
---       as this provides autocomplete and documentation while editing
-
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
@@ -40,7 +33,7 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+      "gdscript",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -50,30 +43,38 @@ return {
         -- root_dir = function() return vim.loop.cwd() end
       },
       intelephense = {
-        single_file_support = true
+        single_file_support = true,
       },
       emmet_ls = {
         single_file_support = true,
         filetypes = {
-          'typescriptreact', 'javascriptreact',
-          'sass', 'scss', 'less', 'xml', 'html',
-          'html.handlebars', 'jst', 'aspx', 'mason'
-        }
+          "typescriptreact",
+          "javascriptreact",
+          "sass",
+          "scss",
+          "less",
+          "xml",
+          "html",
+          "html.handlebars",
+          "jst",
+          "aspx",
+          "mason",
+        },
       },
       html = {
         single_file_support = true,
-        filetypes = { 'html', 'html.handlebars', 'blade' },
+        filetypes = { "html", "html.handlebars", "blade" },
         init_options = {
           configurationSection = { "html", "css", "javascript" },
           embeddedLanguages = {
             css = true,
-            javascript = true
+            javascript = true,
           },
-          provideFormatter = true
-        }
+          provideFormatter = true,
+        },
       },
       sqlls = {
-        single_file_support = true
+        single_file_support = true,
       },
       --[[ astro = {
         single_file_support = true,
