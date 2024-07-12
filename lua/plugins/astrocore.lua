@@ -53,11 +53,16 @@ return {
 
     mappings = {
       n = {
+        -- tmux navigator integration
+        ["<C-h>"] = { ":TmuxNavigateLeft<CR>", desc = "window left" },
+        ["<C-l>"] = { ":TmuxNavigateRight<CR>", desc = "window right" },
+        ["<C-j>"] = { ":TmuxNavigateDown<CR>", desc = "window down" },
+        ["<C-k>"] = { ":TmuxNavigateUp<CR>", desc = "window up" },
+
         -- navigate buffer tabs with `H` and `L`
         L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
-        -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
           function()
             require("astroui.status.heirline").buffer_picker(
@@ -67,8 +72,10 @@ return {
           desc = "Pick to close",
         },
 
+        -- remap arrow keys
         ["<Up>"] = { "gk" },
         ["<Down>"] = { "gj" },
+
         ["<Leader>fs"] = {
           function() require("telescope.builtin").current_buffer_fuzzy_find() end,
           desc = "Find in current buffer",

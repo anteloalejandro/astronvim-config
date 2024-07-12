@@ -26,6 +26,11 @@ return {
     lazy = false,
   },
   {
+    "christoomey/vim-tmux-navigator",
+    name = "tmux-navigator",
+    lazy = false,
+  },
+  {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
       local cmp = require "cmp"
