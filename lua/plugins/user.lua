@@ -31,6 +31,10 @@ return {
     lazy = false,
   },
   {
+    "gpanders/nvim-parinfer",
+    lazy = false,
+  },
+  {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
       local cmp = require "cmp"

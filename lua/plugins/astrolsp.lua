@@ -50,9 +50,6 @@ return {
         filetypes = {
           "typescriptreact",
           "javascriptreact",
-          "sass",
-          "scss",
-          "less",
           "xml",
           "html",
           "html.handlebars",
