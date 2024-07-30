@@ -19,7 +19,8 @@ return {
           -- "go",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
-          -- "python",
+          "html",
+          "css",
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
