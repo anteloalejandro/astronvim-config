@@ -63,6 +63,18 @@ return {
         L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
+        -- remap arrow keys
+        ["<Up>"] = { "gk" },
+        ["<Down>"] = { "gj" },
+
+        -- quick keymaps
+        ["<Leader>r"] = { ":set rnu!<CR>", desc = "Toggle relativenumber" },
+        ["\\"] = { ":ToggleTerm direction=float<CR>" },
+        ["<Leader>W"] = { ":SudaWrite<CR>:e %<CR>", desc = "Save as sudo" },
+        ["<C-s>"] = { function() vim.api.nvim_command "write" end, desc = "Save File" },
+        ["<Leader>D"] = { "<cmd>DBUIToggle<cr>", desc = "Toggle DBUI" },
+
+        -- extend Buffer keymaps
         ["<Leader>bD"] = {
           function()
             require("astroui.status.heirline").buffer_picker(
@@ -72,18 +84,17 @@ return {
           desc = "Pick to close",
         },
 
-        -- remap arrow keys
-        ["<Up>"] = { "gk" },
-        ["<Down>"] = { "gj" },
+        -- extend Debugger keymaps
+        ["<Leader>dl"] = { ":DapLoadLaunchJSON<CR>", desc = "Load launch.json" },
 
+        -- extend Find keymaps
         ["<Leader>fs"] = {
           function() require("telescope.builtin").current_buffer_fuzzy_find() end,
           desc = "Find in current buffer",
         },
-        ["<Leader>r"] = { ":set rnu!<CR>", desc = "Toggle relativenumber" },
-        ["\\"] = { ":ToggleTerm direction=float<CR>" },
-        ["<Leader>W"] = { ":SudaWrite<CR>:e %<CR>", desc = "Save as sudo" },
-        ["<C-s>"] = { function() vim.api.nvim_command "write" end, desc = "Save File" },
+
+        -- extend UI/UX keymaps
+        ["<Leader>uI"] = { ":GuessIndent<CR>", desc = "Guess indentation" },
         ["<Leader>uz"] = { ":ZenMode<CR>", desc = "Toggle Zen mode" },
         ["<Leader>ul"] = {
           function()
@@ -95,10 +106,6 @@ return {
           end,
           desc = "Toggle light mode",
         },
-        ["<Leader>uI"] = { ":GuessIndent<CR>", desc = "Guess indentation" },
-        ["<Leader>D"] = { "<cmd>DBUIToggle<cr>", desc = "Toggle DBUI" },
-
-        ["<Leader>dl"] = { ":DapLoadLaunchJSON", desc = "Load launch.json" },
       },
       i = {
         ["jj"] = { "<ESC>l" },
