@@ -97,6 +97,8 @@ return {
         },
         ["<Leader>uI"] = { ":GuessIndent<CR>", desc = "Guess indentation" },
         ["<Leader>D"] = { "<cmd>DBUIToggle<cr>", desc = "Toggle DBUI" },
+
+        ["<Leader>dl"] = { ":DapLoadLaunchJSON", desc = "Load launch.json" },
       },
       i = {
         ["jj"] = { "<ESC>l" },
