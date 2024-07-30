@@ -1,23 +1,26 @@
 ---@type LazySpec
+-- NOTE: docs at :h astrocore
 return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {
-    -- Configure core features of AstroNvim
     features = {
-      large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
-      autopairs = true, -- enable autopairs at start
-      cmp = true, -- enable completion at start
-      diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
-      highlighturl = true, -- highlight URLs at start
-      notifications = true, -- enable notifications at start
+      -- set global limits for large files for disabling features like treesitter
+      large_buf = { size = 1024 * 500, lines = 10000 },
+      -- (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+      diagnostics_mode = 3,
+
+      autopairs = true,
+      cmp = true,
+      highlighturl = true,
+      notifications = true,
     },
-    -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
       virtual_text = true,
       underline = true,
+      update_in_insert = true,
     },
-    -- vim options can be configured here
+    -- vim options, NOTE: see :h lua-vim-variables
     options = {
       opt = {
         relativenumber = true,
