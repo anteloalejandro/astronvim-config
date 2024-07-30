@@ -34,9 +34,6 @@ return {
         shiftwidth = 2,
         expandtab = true,
         cmdheight = 1,
-
-        -- NEOVIDE SPECIFIC CONFIG
-        guifont = "UbuntuMono Nerd Font:h15:#e-subpixelantialias",
       },
       g = {
         mapleader = " ",
@@ -47,10 +44,6 @@ return {
         status_diagnostics_enabled = true,
         icons_enabled = true,
         ui_notifications_enabled = true,
-
-        -- NEOVIDE SPECIFIC CONFIG
-        neovide_cursor_vfx_mode = "",
-        neovide_cursor_trail_size = 0.1,
       },
     },
 
