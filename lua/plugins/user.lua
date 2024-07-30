@@ -40,7 +40,7 @@ return {
       local cmp = require "cmp"
       opts.sources = cmp.config.sources {
         { name = "nvim_lsp", priority = 1000 },
-        { name = "quickgd", priority = 750 }, -- NOTE: quickgd support
+        { name = "quickgd", priority = 800 }, -- NOTE: quickgd support
         { name = "luasnip", priority = 750 },
         { name = "buffer", priority = 500 },
         { name = "path", priority = 250 },
