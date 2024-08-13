@@ -13,7 +13,7 @@ return {
     formatting = {
       format_on_save = {
         enabled = true,
-        allow_filetypes = { },
+        allow_filetypes = {},
         ignore_filetypes = {
           "html",
           "css",
@@ -63,24 +63,9 @@ return {
       }, ]]
     },
     -- customize how language servers are attached
-    handlers = { },
+    handlers = {},
     -- Configure buffer local auto commands to add when attaching a language server
-    autocmds = {
-      -- highlight tokens matching the token behind the cursor
-      lsp_document_highlight = {
-        cond = "textDocument/documentHighlight",
-        {
-          event = { "CursorHold", "CursorHoldI" },
-          desc = "Document Highlighting",
-          callback = function() vim.lsp.buf.document_highlight() end,
-        },
-        {
-          event = { "CursorMoved", "CursorMovedI", "BufLeave" },
-          desc = "Document Highlighting Clear",
-          callback = function() vim.lsp.buf.clear_references() end,
-        },
-      },
-    },
+    autocmds = {},
     -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
