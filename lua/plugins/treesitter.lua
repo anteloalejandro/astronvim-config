@@ -8,6 +8,11 @@ return {
       "c",
       "yaml",
       "markdown",
+      "scss",
+      "yuck",
+      "sql",
+      "zsh",
+      "bash",
     })
   end,
 }

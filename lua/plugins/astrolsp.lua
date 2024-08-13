@@ -16,7 +16,10 @@ return {
         allow_filetypes = {},
         ignore_filetypes = {
           "html",
+          "astro",
           "css",
+          "scss",
+          "yuck",
         },
       },
       timeout_ms = 1000,
