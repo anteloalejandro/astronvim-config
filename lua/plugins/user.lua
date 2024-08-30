@@ -26,10 +26,6 @@ return {
     lazy = false,
   },
   {
-    "gpanders/nvim-parinfer",
-    lazy = false,
-  },
-  {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       window = {

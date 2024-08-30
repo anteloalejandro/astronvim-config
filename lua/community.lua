@@ -17,4 +17,10 @@ return {
 
   -- sql tools
   { import = "astrocommunity.pack.full-dadbod" },
+
+  -- editing tools
+  -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+
+  -- docs
+  { import = "astrocommunity.editing-support.nvim-devdocs" },
 }

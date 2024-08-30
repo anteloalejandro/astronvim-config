@@ -44,6 +44,7 @@ return {
         status_diagnostics_enabled = true,
         icons_enabled = true,
         ui_notifications_enabled = true,
+        suda_smart_edit = 1,
       },
     },
 
@@ -66,9 +67,7 @@ return {
         -- quick keymaps
         ["<Leader>r"] = { ":set rnu!<CR>", desc = "Toggle relativenumber" },
         ["\\"] = { ":ToggleTerm direction=float<CR>" },
-        ["<Leader>W"] = { ":SudaWrite<CR>:e %<CR>", desc = "Save as sudo" },
         ["<C-s>"] = { function() vim.api.nvim_command "write" end, desc = "Save File" },
-        ["<Leader>D"] = { "<cmd>DBUIToggle<cr>", desc = "Toggle DBUI" },
 
         -- extend Buffer keymaps
         ["<Leader>bD"] = {
@@ -90,6 +89,7 @@ return {
         },
 
         -- extend UI/UX keymaps
+        ["<Leader>uq"] = { ":DBUIToggle<CR>", desc = "Toggle DBUI" },
         ["<Leader>uI"] = { ":GuessIndent<CR>", desc = "Guess indentation" },
         ["<Leader>uz"] = { ":ZenMode<CR>", desc = "Toggle Zen mode" },
         ["<Leader>ul"] = {
@@ -102,14 +102,28 @@ return {
           end,
           desc = "Toggle light mode",
         },
+
+        -- docs keymaps
+        ["<Leader>D"] = { desc = "󰦨 Docs" },
+        ["<Leader>Di"] = { ":DevdocsFetch<CR>:DevdocsInstall<CR>", desc = "Installer" },
+        ["<Leader>Du"] = { ":DevdocsFetch<CR>:DevdocsUpdate<CR>", desc = "Update" },
+        ["<Leader>DU"] = { ":DevdocsFetch<CR>:DevdocsUpdateAll<CR>", desc = "Update All" },
+        ["<Leader>Do"] = { ":DevdocsOpenCurrentFloat<CR>", desc = "Open docs for current filetype" },
+        ["<Leader>DO"] = { ":DevdocsOpenFloat<CR>", desc = "Open all docs" },
+        ["<Leader>Db"] = { ":DevdocsOpenCurrent<CR>", desc = "Open docs for current filetype (new buffer)" },
+        ["<Leader>DB"] = { ":DevdocsOpen<CR>", desc = "Open all docs (new buffer)" },
+        ["<Leader>Dt"] = { ":DevdocsToggle<CR>", desc = "Toggle docs window" },
       },
       i = {
         ["jj"] = { "<ESC>l" },
         ["<C-s>"] = { function() vim.api.nvim_command "write" end, desc = "Save File" },
       },
-      t = {
-        -- setting a mapping to false will disable it
-        -- ["<esc>"] = false,
+      t = {},
+      v = {
+        -- Narrow Region
+        ["<Leader>n"] = { desc = "Narrow Region" },
+        ["<Leader>ns"] = { "<Plug>NrrwrgnDo", desc = "To split" },
+        ["<Leader>nb"] = { "<Plug>NrrwrgnBangDo", desc = "To buffer" },
       },
     },
   },

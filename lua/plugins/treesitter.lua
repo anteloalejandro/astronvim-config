@@ -11,8 +11,10 @@ return {
       "scss",
       "yuck",
       "sql",
-      "zsh",
       "bash",
+      "regex",
+
+      "html", -- INFO: required for DevDocs, though it should be installed already
     })
   end,
 }
