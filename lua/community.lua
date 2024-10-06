@@ -23,4 +23,7 @@ return {
 
   -- docs
   { import = "astrocommunity.editing-support.nvim-devdocs" },
+
+  -- vscode support
+  { import = "astrocommunity.recipes.vscode" },
 }
