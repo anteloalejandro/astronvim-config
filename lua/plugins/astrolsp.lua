@@ -12,15 +12,8 @@ return {
     },
     formatting = {
       format_on_save = {
-        enabled = true,
+        enabled = false,
         allow_filetypes = {},
-        ignore_filetypes = {
-          "html",
-          "astro",
-          "css",
-          "scss",
-          "yuck",
-        },
       },
       timeout_ms = 1000,
     },
