@@ -116,6 +116,8 @@ return {
       },
       i = {
         ["jj"] = { "<ESC>l" },
+        ["jk"] = { "<ESC>" },
+        ["kj"] = { "<ESC>" },
         ["<C-s>"] = { function() vim.api.nvim_command "write" end, desc = "Save File" },
       },
       t = {},
