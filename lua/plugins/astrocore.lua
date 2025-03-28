@@ -33,7 +33,7 @@ return {
         softtabstop = 2,
         shiftwidth = 2,
         expandtab = true,
-        cmdheight = 1,
+        -- cmdheight = 1,
       },
       g = {
         mapleader = " ",
@@ -123,9 +123,9 @@ return {
       t = {},
       v = {
         -- Narrow Region
-        ["<Leader>n"] = { desc = "Narrow Region" },
-        ["<Leader>ns"] = { "<Plug>NrrwrgnDo", desc = "To split" },
-        ["<Leader>nb"] = { "<Plug>NrrwrgnBangDo", desc = "To buffer" },
+        -- ["<Leader>n"] = { desc = "Narrow Region" },
+        -- ["<Leader>ns"] = { "<Plug>NrrwrgnDo", desc = "To split" },
+        -- ["<Leader>nb"] = { "<Plug>NrrwrgnBangDo", desc = "To buffer" },
       },
     },
   },
