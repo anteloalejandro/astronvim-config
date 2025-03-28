@@ -7,9 +7,7 @@ return {
     features = {
       -- set global limits for large files for disabling features like treesitter
       large_buf = { size = 1024 * 500, lines = 10000 },
-      -- (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
-      diagnostics_mode = 3,
-
+      diagnostics = { virtual_text = true, virtual_lines = false },
       autopairs = true,
       cmp = true,
       highlighturl = true,

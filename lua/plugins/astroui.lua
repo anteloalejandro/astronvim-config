@@ -4,7 +4,7 @@ return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
-    colorscheme = "gruvbox",
+    colorscheme = "gruvbox-baby",
     highlights = {
       -- overwrite colors in all themes
       init = {},

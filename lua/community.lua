@@ -3,6 +3,7 @@ return {
   "AstroNvim/astrocommunity",
   -- colorscheme
   { import = "astrocommunity.colorscheme.gruvbox-nvim" },
+  { import = "astrocommunity.colorscheme.gruvbox-baby" },
 
   -- language support
   { import = "astrocommunity.pack.lua" },
@@ -16,6 +17,7 @@ return {
   { import = "astrocommunity.pack.godot" },
 
   -- sql tools
+  -- FIX: vim-dadbod-completion requires nvim-cmp on the default config
   { import = "astrocommunity.pack.full-dadbod" },
 
   -- editing tools

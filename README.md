@@ -1,8 +1,15 @@
-# AstroNvim v4 configuration
+# AstroNvim v5 configuration
 
 Contains configuration files for [AstroNvim](https://astronvim.com), based on [AstroNvim/template](https://github.com/AstroNvim/template).
 
 ## Installation
+
+### Install dependencies
+
+- neovim (duh!)
+- gcc (or other C compiler)
+- nodejs and npm
+- python3 and python3-venv
 
 ### Make a backup of your current nvim and shared directories
 
