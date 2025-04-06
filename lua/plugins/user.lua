@@ -1,12 +1,9 @@
 ---@type LazySpec
 return {
   {
-    "folke/zen-mode.nvim",
-    name = "zen-mode",
-  },
-  {
     "nvim-treesitter/playground",
     name = "tsplayground",
+    cmd = "TSPlaygroundToggle",
   },
   {
     "lambdalisue/suda.vim",

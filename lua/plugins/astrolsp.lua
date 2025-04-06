@@ -49,9 +49,6 @@ return {
           provideFormatter = true,
         },
       },
-      sqlls = {
-        single_file_support = true,
-      },
       --[[ astro = {
         single_file_support = true,
         filetypes = { 'astro', 'html' },

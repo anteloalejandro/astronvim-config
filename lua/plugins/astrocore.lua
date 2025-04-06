@@ -7,7 +7,6 @@ return {
     features = {
       -- set global limits for large files for disabling features like treesitter
       large_buf = { size = 1024 * 500, lines = 10000 },
-      diagnostics = { virtual_text = true, virtual_lines = false },
       autopairs = true,
       cmp = true,
       highlighturl = true,
@@ -15,6 +14,7 @@ return {
     },
     diagnostics = {
       virtual_text = true,
+      virtual_lines = false,
       underline = true,
       update_in_insert = true,
     },
@@ -63,9 +63,7 @@ return {
         ["<Down>"] = { "gj" },
 
         -- quick keymaps
-        ["<Leader>r"] = { ":set rnu!<CR>", desc = "Toggle relativenumber" },
         ["\\"] = { ":ToggleTerm direction=float<CR>" },
-        ["<C-s>"] = { function() vim.api.nvim_command "write" end, desc = "Save File" },
 
         -- extend Buffer keymaps
         ["<Leader>bD"] = {
@@ -80,26 +78,9 @@ return {
         -- extend Debugger keymaps
         ["<Leader>dl"] = { ":DapLoadLaunchJSON<CR>", desc = "Load launch.json" },
 
-        -- extend Find keymaps
-        ["<Leader>fs"] = {
-          function() require("telescope.builtin").current_buffer_fuzzy_find() end,
-          desc = "Find in current buffer",
-        },
-
         -- extend UI/UX keymaps
         ["<Leader>uq"] = { ":DBUIToggle<CR>", desc = "Toggle DBUI" },
         ["<Leader>uI"] = { ":GuessIndent<CR>", desc = "Guess indentation" },
-        ["<Leader>uz"] = { ":ZenMode<CR>", desc = "Toggle Zen mode" },
-        ["<Leader>ul"] = {
-          function()
-            if vim.o.background == "dark" then
-              vim.o.background = "light"
-            else
-              vim.o.background = "dark"
-            end
-          end,
-          desc = "Toggle light mode",
-        },
 
         -- docs keymaps
         ["<Leader>D"] = { desc = "󰦨 Docs" },
@@ -116,15 +97,9 @@ return {
         ["jj"] = { "<ESC>l" },
         ["jk"] = { "<ESC>" },
         ["kj"] = { "<ESC>" },
-        ["<C-s>"] = { function() vim.api.nvim_command "write" end, desc = "Save File" },
       },
       t = {},
-      v = {
-        -- Narrow Region
-        -- ["<Leader>n"] = { desc = "Narrow Region" },
-        -- ["<Leader>ns"] = { "<Plug>NrrwrgnDo", desc = "To split" },
-        -- ["<Leader>nb"] = { "<Plug>NrrwrgnBangDo", desc = "To buffer" },
-      },
+      v = {},
     },
   },
 }

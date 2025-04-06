@@ -12,7 +12,7 @@ return {
           ["<C-l>"] = false,
           ["<C-j>"] = false,
           ["<C-k>"] = false,
-          ["<Leader>uz"] = "<CMD>call VSCodeNotify('workbench.action.toggleZenMode')<CR>",
+          ["<Leader>uZ"] = "<CMD>call VSCodeNotify('workbench.action.toggleZenMode')<CR>",
         },
       },
     },
