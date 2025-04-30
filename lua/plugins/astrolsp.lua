@@ -29,6 +29,7 @@ return {
         filetypes = {
           "typescriptreact",
           "javascriptreact",
+          "mdx",
           "xml",
           "html",
           "html.handlebars",

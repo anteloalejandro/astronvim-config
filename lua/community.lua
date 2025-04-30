@@ -15,6 +15,7 @@ return {
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.godot" },
+  { import = "astrocommunity.pack.mdx" },
 
   -- sql tools
   -- FIX: vim-dadbod-completion requires nvim-cmp on the default config

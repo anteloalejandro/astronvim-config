@@ -31,7 +31,7 @@ return {
         softtabstop = 2,
         shiftwidth = 2,
         expandtab = true,
-        -- cmdheight = 1,
+        cmdheight = 1,
       },
       g = {
         mapleader = " ",

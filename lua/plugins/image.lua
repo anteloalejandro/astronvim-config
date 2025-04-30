@@ -6,7 +6,7 @@ local is_kitty =
   vim.fn.getenv("TERM") == "xterm-kitty" or
   vim.fn.getenv("TERM") == "xterm-ghostty"
 
-if not is_kitty and is_incompatible_if_not_kitty then return {} end
+if (not is_kitty) and is_incompatible_if_not_kitty or vim.g.neovide then return {} end
 
 local backend = is_kitty and "kitty" or "ueberzug"
 
