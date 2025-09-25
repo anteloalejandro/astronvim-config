@@ -92,6 +92,10 @@ return {
         ["<Leader>Db"] = { ":DevdocsOpenCurrent<CR>", desc = "Open docs for current filetype (new buffer)" },
         ["<Leader>DB"] = { ":DevdocsOpen<CR>", desc = "Open all docs (new buffer)" },
         ["<Leader>Dt"] = { ":DevdocsToggle<CR>", desc = "Toggle docs window" },
+
+        -- extra extensions
+        ["<Leader>E"] = { desc = " Extra" },
+        ["<Leader>Er"] = { desc = " Rust" },
       },
       i = {
         ["jj"] = { "<ESC>l" },

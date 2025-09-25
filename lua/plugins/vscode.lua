@@ -16,6 +16,6 @@ return {
         },
       },
     },
-    { "AstroNvim/astroui", opts = { colorscheme = false } },
   },
+  { "AstroNvim/astroui", opts = { colorscheme = false } },
 }

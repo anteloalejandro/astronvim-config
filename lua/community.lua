@@ -2,7 +2,6 @@
 return {
   "AstroNvim/astrocommunity",
   -- colorscheme
-  { import = "astrocommunity.colorscheme.gruvbox-nvim" },
   { import = "astrocommunity.colorscheme.gruvbox-baby" },
 
   -- language support
@@ -17,6 +16,7 @@ return {
   { import = "astrocommunity.pack.godot" },
   { import = "astrocommunity.pack.mdx" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.cs" },
 
   -- sql tools
   -- FIX: vim-dadbod-completion requires nvim-cmp on the default config
