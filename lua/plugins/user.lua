@@ -12,7 +12,6 @@ return {
   {
     "christoomey/vim-tmux-navigator",
     name = "tmux-navigator",
-    enabled = false
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
