@@ -41,6 +41,9 @@ return {
         end,
         'fallback',
       },
+      -- Move original functionality to Ctrl+Enter
+      ['<C-Enter>'] = { "snippet_forward" },
+      ['<C-S-Enter>'] = { "snippet_backward" },
     },
   }
 }
