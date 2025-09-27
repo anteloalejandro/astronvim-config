@@ -11,6 +11,11 @@ return {
       g = {
         neovide_cursor_vfx_mode = "",
         neovide_cursor_trail_size = 0.1,
+        neovide_hide_mouse_when_typing = true,
+        neovide_padding_top = 8,
+        neovide_padding_bottom = 8,
+        neovide_padding_right = 8,
+        neovide_padding_left = 8,
       },
     },
   },

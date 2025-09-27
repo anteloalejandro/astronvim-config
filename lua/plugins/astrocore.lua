@@ -93,6 +93,17 @@ return {
         ["<Leader>DB"] = { ":DevdocsOpen<CR>", desc = "Open all docs (new buffer)" },
         ["<Leader>Dt"] = { ":DevdocsToggle<CR>", desc = "Toggle docs window" },
 
+        -- terminal keymaps
+        ["<Leader>tp"] = false,
+        ["<Leader>tn"] = false,
+        ["<Leader>tt"] = {
+          function ()
+            require("astrocore").toggle_term_cmd("htop")
+          end,
+          desc = "ToggleTerm htop"
+        },
+
+
         -- extra extensions
         ["<Leader>E"] = { desc = " Extra" },
         ["<Leader>Er"] = { desc = " Rust" },
