@@ -5,7 +5,7 @@ return {
   ---@type AstroLSPOpts
   opts = {
     features = {
-      autoformat = false, -- do not format on start, will be done on save
+      autoformat = false,
       codelens = true,
       inlay_hints = false,
       semantic_tokens = true,
@@ -25,36 +25,61 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       emmet_ls = {
-        single_file_support = true,
         filetypes = {
           "typescriptreact",
           "javascriptreact",
-          "mdx",
+          "markdown.mdx",
           "xml",
           "html",
           "html.handlebars",
           "jst",
           "aspx",
-          "mason",
         },
       },
       html = {
-        single_file_support = true,
         filetypes = { "html", "html.handlebars", "blade" },
-        init_options = {
-          configurationSection = { "html", "css", "javascript" },
-          embeddedLanguages = {
-            css = true,
-            javascript = true,
-          },
-          provideFormatter = true,
-        },
       },
-      --[[ astro = {
-        single_file_support = true,
-        filetypes = { 'astro', 'html' },
-        root_dir = function() return vim.loop.cwd() end
-      }, ]]
+      -- sqls = {
+      --   -- on_attach = function () end,
+      --   settings = {
+      --     -- sqls = {
+      --     --   -- NOTE: connections can be found on ~/.config/sqls/config.yml
+      --     --
+      --     --   connections = {
+      --     --     {
+      --     --       driver = "mysql",
+      --     --       host = "localhost",
+      --     --       port = 3306,
+      --     --       user = "blog_admin",
+      --     --       passwd = "blog_admin",
+      --     --       dbName = "blog",
+      --     --       proto = "tcp"
+      --     --     },
+      --     --   }
+      --     -- }
+      --   }
+      -- },
+      rust_analyzer = {
+        settings = {
+          ["rust-analyzer"] = {
+            rustfmt = {
+              -- use leptosfmt instead of rustfmt to support leptos view! macro formatting
+              overrideCommand = { "leptosfmt", "--stdin", "--rustfmt" }
+            },
+            procMacro = {
+              ignored = {
+                leptos_macro = {
+                  -- the #[server] macro does not transform the body of the function
+                  "server"
+                }
+              }
+            },
+            -- cargo = {
+            --   features = "all" -- asume all features of every crate are enabled
+            -- }
+          }
+        }
+      }
     },
     -- customize how language servers are attached
     handlers = {},

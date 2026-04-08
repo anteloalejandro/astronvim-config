@@ -79,30 +79,30 @@ return {
         ["<Leader>dl"] = { ":DapLoadLaunchJSON<CR>", desc = "Load launch.json" },
 
         -- extend UI/UX keymaps
-        ["<Leader>uq"] = { ":DBUIToggle<CR>", desc = "Toggle DBUI" },
         ["<Leader>uI"] = { ":GuessIndent<CR>", desc = "Guess indentation" },
 
-        -- docs keymaps
-        ["<Leader>D"] = { desc = "󰦨 Docs" },
-        ["<Leader>Di"] = { ":DevdocsFetch<CR>:DevdocsInstall<CR>", desc = "Installer" },
-        ["<Leader>Du"] = { ":DevdocsFetch<CR>:DevdocsUpdate<CR>", desc = "Update" },
-        ["<Leader>DU"] = { ":DevdocsFetch<CR>:DevdocsUpdateAll<CR>", desc = "Update All" },
-        ["<Leader>Do"] = { ":DevdocsOpenCurrentFloat<CR>", desc = "Open docs for current filetype" },
-        ["<Leader>DO"] = { ":DevdocsOpenFloat<CR>", desc = "Open all docs" },
-        ["<Leader>Db"] = { ":DevdocsOpenCurrent<CR>", desc = "Open docs for current filetype (new buffer)" },
-        ["<Leader>DB"] = { ":DevdocsOpen<CR>", desc = "Open all docs (new buffer)" },
-        ["<Leader>Dt"] = { ":DevdocsToggle<CR>", desc = "Toggle docs window" },
+        -- dadbod keymaps
+        ["<Leader>D"] = { desc = "󰡦 DB" },
+        ["<Leader>Du"] = { ":DBUIToggle<CR>", desc = "Toggle DBUI" },
+        ["<Leader>Do"] = { ":DBUI<CR>", desc = "Open and focus DBUI" },
+        ["<Leader>Db"] = { ":DBUIFindBuffer<CR>", desc = "Open current buffer in DBUI" },
+        ["<Leader>Dr"] = { ":DBUIAddConnection<CR>", desc = "Rename current buffer" },
+        ["<Leader>Da"] = { ":DBUIRenameBuffer<CR>", desc = "Add DB connection" },
+        ["<Leader>D<CR>"] = { ":DBUILastQueryInfo<CR>", desc = "Show info of last query" },
 
         -- terminal keymaps
         ["<Leader>tp"] = false,
-        ["<Leader>tn"] = false,
         ["<Leader>tt"] = {
-          function ()
-            require("astrocore").toggle_term_cmd("htop")
-          end,
+          function () require("astrocore").toggle_term_cmd("htop") end,
           desc = "ToggleTerm htop"
         },
-
+        ["<Leader>tb"] = {
+          function () require("astrocore").toggle_term_cmd("btop --preset 9") end,
+          desc = "ToggleTerm btop"
+        },
+        ["<Leader>tf"] = {
+          ":TermExec cmd=fastfetch direction=float<CR>", desc = "ToggleTerm fastfetch"
+        },
 
         -- extra extensions
         ["<Leader>E"] = { desc = " Extra" },

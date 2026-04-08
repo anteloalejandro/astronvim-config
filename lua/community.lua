@@ -18,12 +18,15 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.cs" },
 
+  -- typst support
+  { import = "astrocommunity.pack.typst" },
+
   -- sql tools
-  -- FIX: vim-dadbod-completion requires nvim-cmp on the default config
   { import = "astrocommunity.pack.full-dadbod" },
 
   -- editing tools
   -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  { import = "astrocommunity.recipes.picker-lsp-mappings" },
 
   -- docs
   { import = "astrocommunity.editing-support.nvim-devdocs" },
