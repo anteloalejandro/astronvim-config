@@ -1,4 +1,4 @@
-# AstroNvim v5 configuration
+# AstroNvim v6 configuration
 
 Contains configuration files for [AstroNvim](https://astronvim.com), based on [AstroNvim/template](https://github.com/AstroNvim/template).
 
