@@ -10,7 +10,7 @@ return {
     sources = {
       default = {
         "lsp",
-        "quickgd",
+        -- "quickgd",
         "path",
         "snippets",
         "buffer",
