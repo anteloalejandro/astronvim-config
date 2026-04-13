@@ -93,11 +93,11 @@ return {
         -- terminal keymaps
         ["<Leader>tp"] = false,
         ["<Leader>tt"] = {
-          function () require("astrocore").toggle_term_cmd("htop") end,
+          function() require("astrocore").toggle_term_cmd("htop") end,
           desc = "ToggleTerm htop"
         },
         ["<Leader>tb"] = {
-          function () require("astrocore").toggle_term_cmd("btop --preset 9") end,
+          function() require("astrocore").toggle_term_cmd("btop --preset 9") end,
           desc = "ToggleTerm btop"
         },
         ["<Leader>tf"] = {

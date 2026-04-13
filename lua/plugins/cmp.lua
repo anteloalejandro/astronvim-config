@@ -5,7 +5,7 @@ local function has_words_before()
 end
 
 return {
-  "Saghen/blink.cmp",
+  "saghen/blink.cmp",
   opts = {
     sources = {
       default = {

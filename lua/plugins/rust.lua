@@ -2,9 +2,9 @@
 return {
   {
     'cordx56/rustowl',
-    version = '*', -- Latest stable version
+    version = '*',   -- Latest stable version
     build = 'cargo binstall rustowl',
-    lazy = false, -- This plugin is already lazy
+    lazy = false,    -- This plugin is already lazy
     enabled = false, -- do not enable this plugin for the time being
     opts = {
       highlight_style = 'underline',
@@ -33,7 +33,7 @@ return {
   },
   { -- add tree-sitter syntax highlighting for the leptos view macro
     "rayliwell/tree-sitter-rstml",
-    config = function ()
+    config = function()
       require("tree-sitter-rstml").setup()
     end
   },

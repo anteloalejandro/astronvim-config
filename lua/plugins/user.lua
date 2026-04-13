@@ -15,6 +15,7 @@ return {
   },
   {
     "bezhermoso/tree-sitter-ghostty",
+    build = "make nvim_install",
   },
   {
     "nvim-neo-tree/neo-tree.nvim",

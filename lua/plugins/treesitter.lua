@@ -1,24 +1,26 @@
----@type LazySpec
+---@type AstroCoreOpts
 return {
-  "nvim-treesitter/nvim-treesitter",
+  "AstroNvim/astrocore",
   opts = {
-    ensure_installed = {
-      "vim",
-      "hyprlang",
-      "c",
-      "yaml",
-      "toml",
-      "json",
-      "markdown",
-      "scss",
-      "yuck",
-      "sql",
-      "bash",
-      "regex",
-      "kotlin",
-      "groovy",
+    tresitter = {
+      ensure_installed = {
+        "vim",
+        "hyprlang",
+        "c",
+        "yaml",
+        "toml",
+        "json",
+        "markdown",
+        "scss",
+        "yuck",
+        "sql",
+        "bash",
+        "regex",
+        "kotlin",
+        "groovy",
 
-      "html", -- INFO: required for DevDocs, though it should be installed already
+        "html", -- INFO: required for DevDocs, though it should be installed already
+      }
     }
   }
 }
