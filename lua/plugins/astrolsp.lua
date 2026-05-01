@@ -6,7 +6,7 @@ return {
   opts = {
     features = {
       autoformat = false,
-      codelens = true,
+      codelens = false,
       inlay_hints = false,
       semantic_tokens = true,
     },
