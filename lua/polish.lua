@@ -15,3 +15,7 @@ if vim.g.neovide then
     end
   end)
 end
+
+-- Fix repeated characters in ghostty with deadkeys keyboard layout
+-- INFO: https://github.com/ghostty-org/ghostty/discussions/12433#discussioncomment-17071981
+io.write("\x1b[<u")
