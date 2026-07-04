@@ -57,11 +57,12 @@ math.randomseed(os.time())
 
 return {
   "folke/snacks.nvim",
-  opts = {
-    dashboard = {
-      preset = {
-        header = table.concat(headers[math.random(#headers)], "\n"),
-      }
-    }
-  }
+  opts = function(_, opts)
+    opts.dashboard.preset.header = table.concat(headers[math.random(#headers)], "\n")
+    table.insert(opts.dashboard.preset.keys, {
+      key = "l",
+      desc = "󰘦  LeetCode",
+      action = function() require("leetcode").start(false) end,
+    })
+  end,
 }
