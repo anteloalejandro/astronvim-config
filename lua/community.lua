@@ -35,4 +35,7 @@ return {
 
   -- vscode support
   { import = "astrocommunity.recipes.vscode" },
+
+  -- leetcode integration
+  { import = "astrocommunity.game.leetcode-nvim" }
 }
