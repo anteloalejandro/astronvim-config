@@ -24,7 +24,7 @@ return {
         relativenumber = true,
         number = true,
         spell = false,
-        spelllang = "en",
+        spelllang = "en,es",
         signcolumn = "auto",
         wrap = false,
         linebreak = true,
@@ -64,6 +64,15 @@ return {
 
         -- quick keymaps
         ["\\"] = { ":ToggleTerm direction=float<CR>" },
+
+        -- spellchecker
+        ["<Leader>s"] = { desc = " Spellchecker" },
+        ["<Leader>sd"] = { ":setlocal nospell<CR>", desc = "Disable spellchecker" },
+        ["<Leader>ss"] = { ":setlocal spell spelllang=es<CR>", desc = "Set language to Spanish" },
+        ["<Leader>se"] = { ":setlocal spell spelllang=en<CR>", desc = "Set language to English" },
+        ["<Leader>sc"] = { ":setlocal spell spelllang=ca<CR>", desc = "Set language to Catalonian" },
+        ["<Leader>sa"] = { ":setlocal spell spelllang=en,es,ca<CR>", desc = "Enable all languages" },
+        ["<Leader>sn"] = { ":setlocal spell spelllang=en,es<CR>", desc = "Enable Spanish + English" },
 
         -- extend Buffer keymaps
         ["<Leader>bD"] = {
