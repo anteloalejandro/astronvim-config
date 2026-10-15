@@ -19,6 +19,7 @@ return {
   { import = "astrocommunity.pack.mdx" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.cs" },
+  { import = "astrocommunity.pack.cpp" },
 
   -- typst support
   { import = "astrocommunity.pack.typst" },
